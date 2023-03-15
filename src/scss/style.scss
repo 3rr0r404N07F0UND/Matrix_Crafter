@@ -1,0 +1,361 @@
+@import "mixin.scss";
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Gothic A1", sans-serif;
+  font-weight: bold;
+  color: #707070;
+  cursor: default;
+  background: lighten($color: #e39ff6, $amount: 13%);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+input {
+  cursor: text;
+}
+html,
+body {
+  width: 100%;
+}
+h1 {
+  font-size: 2.5vw;
+  text-align: center;
+  margin-top: 2.6vw;
+  color: #524f4d;
+}
+.calculator {
+  width: 96.87vw;
+  height: 42.81vw;
+  margin: auto;
+  margin-top: 2.34vw;
+  .box {
+    @include transitionHoverActive();
+    @include box();
+    @include borderSize();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    .arrayPlus {
+      $WH: 13.02vw;
+      font-size: 5.2vw;
+      width: $WH;
+      height: $WH;
+      background-color: #5f2e95;
+      color: #feffd6;
+      @include borderSize($b10);
+      margin: 8.59vw;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        transition: 1s;
+        width: 2.96vw;
+        height: 2.96vw;
+        margin: 0.05vw;
+        float: left;
+        border-radius: $b10;
+        @include borderSize(0.13vw);
+        list-style: none;
+        overflow: hidden;
+        input {
+          width: 100%;
+          height: 100%;
+          border: none;
+          text-align: center;
+          font-size: 0.62vw;
+          background-color: white;
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          &:focus {
+            outline: none;
+            transition: 1s;
+          }
+        }
+        &:hover {
+          //transform: perspective(500px) scaleZ(3) translateZ(100px);
+          transition-delay: 1s;
+        }
+      }
+    }
+    .arrayPlus {
+      &:hover {
+        color: $hoverColor;
+        @include transitionHoverActive();
+      }
+      &:active {
+        color: $activeColor;
+        @include transitionHoverActive();
+      }
+    }
+    &:hover {
+      //transform: perspective(500px) scaleZ(0.8) translateZ(100px);
+      @include transitionHoverActive();
+      transition-delay: 1s;
+      transition-duration: 1s;
+    }
+    &:last-child {
+      margin-right: 0;
+      @include borderSize(0);
+      box-shadow: 0 0 5px 10px rgba(142, 99, 189, 0.3);
+    }
+  }
+  .tool {
+    @include borderSize();
+    width: 26.04vw;
+    height: 10.41vw;
+    float: left;
+    border-radius: $b10;
+    margin-right: 6.77vw;
+    &:first-child {
+      margin-left: 2.6vw;
+    }
+    div {
+      margin-top: 0.78vw;
+      margin-right: $b10;
+      width: auto;
+      //height: 3.12vw;
+      p {
+        font-size: 1.3541vw; //26px
+        display: inline-block;
+        margin-left: $b10;
+        margin-top: 1.02vw;
+      }
+      &:nth-child(2) {
+        margin-top: 1.66vw;
+      }
+    }
+    input {
+      width: 6vw;
+      height: 6vw;
+      @include borderSize(0.2083vw);
+      border-radius: 50%;
+      text-align: center;
+      padding: 0.26vw;
+      font-size: 1.56vw;
+      line-height: 1.56vw;
+      background-color: white;
+      margin-left: $b10;
+      &:focus {
+        outline: none;
+      }
+    }
+    // input::-webkit-outer-spin-button,
+    // input::-webkit-inner-spin-button {
+    //   -webkit-appearance: none;
+    //   margin: 0;
+    // }
+    .secondButton {
+      display: none;
+      button {
+        @include borderSize();
+        border-radius: $b10;
+        width: 10.41vw;
+        height: auto;
+        margin: {
+          top: 2.12vw;
+          left: 1.38vw;
+        }
+        font-size: 2.08vw;
+        background-color: $buttonColor;
+        color: white;
+        &:hover {
+          color: $hoverColor;
+        }
+      }
+      margin: 0 !important;
+      width: auto !important;
+      height: auto !important;
+    }
+    button:hover {
+      color: $hoverColor;
+      @include transitionHoverActive();
+    }
+    button:active {
+      color: $activeColor;
+      @include transitionHoverActive();
+    }
+  }
+  .tool:last-child {
+    margin-right: 0;
+    div {
+      margin: {
+        left: 1.19vw;
+        right: 1.19vw;
+      }
+      > button {
+        > div {
+          margin-top: 0;
+          @include transitionHoverActive();
+          font-weight: bold;
+        }
+      }
+      background-color: transparent;
+      color: white;
+      font-size: 1.87vw;
+      cursor: pointer;
+      &:hover {
+        color: $hoverColor;
+      }
+    }
+    div:nth-child(2) {
+      margin-top: 0;
+    }
+    button:first-child {
+      margin-right: 1.77vw;
+      margin-bottom: 0.625vw;
+    }
+    button:nth-child(2) {
+      margin-bottom: 0.78vw;
+    }
+    button {
+      @include borderSize();
+      width: 10.41vw;
+      height: 2.6041vw;
+      font-size: $f36;
+      float: left;
+      padding-top: 0.3vw;
+      background-color: transparent;
+      border-radius: $b10;
+      color: white;
+      background-color: $buttonColor;
+    }
+    button:hover {
+      cursor: pointer;
+      color: $hoverColor;
+      @include transitionHoverActive();
+    }
+    button:active {
+      color: $activeColor;
+      @include transitionHoverActive();
+    }
+  }
+}
+.rule {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -6.51vw;
+  margin-left: -15.625vw;
+  width: 31.25vw; //600px
+  height: 13.02vw;
+  padding: 1.302vw 1.56vw;
+  @include borderSize(0);
+  border-radius: 1.5625vw;
+  background-color: $ruleBackgroundColor;
+  h2 {
+    margin-bottom: 0.52vw;
+    font-size: 1.875vw;
+    text-align: center;
+    background-color: transparent;
+    color: darken($color: white, $amount: 0);
+  }
+  p {
+    line-height: $warningTextLineHeight;
+    font-size: $warningText;
+    background-color: transparent;
+    color: $warningTextColor;
+    &:first-child {
+      margin-top: 0.72vw;
+    }
+  }
+  .ok {
+    margin: 1.25vw auto 0; // 20px
+    //margin-bottom: 2.03vw;
+    background-color: $okColor;
+    color: $okTextColor;
+    font-size: 1.04vw;
+    text-align: center;
+    line-height: 2.3437vw;
+    width: 3.9vw;
+    height: 2.3437vw;
+    @include transitionHoverActive();
+    @include borderSize();
+    border-radius: $b10;
+    &:hover {
+      @include transitionHoverActive();
+      color: $hoverColor;
+      cursor: pointer;
+    }
+    &:active {
+      @include transitionHoverActive();
+      color: $activeColor;
+    }
+    //border-color: #b37fe0;
+    border-width: 0;
+  }
+}
+.warning {
+  width: 31.25vw;
+  height: 13.02vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -15.62vw;
+  margin-top: -6.51vw;
+  @include borderSize(0);
+  border-radius: 1.5625vw;
+  display: none;
+  background-color: $ruleBackgroundColor;
+  overflow: hidden;
+  padding: 1.302vw 1.56vw; //20px = 1.0416 25px = 1.302
+  h3 {
+    font-size: 1.875vw;
+    //margin-top: $b10;
+    //padding: 1.0416vw 0;
+    margin-bottom: $b10;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+  }
+  .warningInner {
+    width: 27.6vw;
+    height: 5.2083vw; //6.51vw = 125px 100px = 5.2083 4.9479 = 95px
+    background-color: transparent;
+    color: $warningTextColor;
+    line-height: $warningTextLineHeight;
+    font-size: $warningText;
+  }
+  .warningOk {
+    clear: both;
+    width: 3.9vw; //65px 3.3854vw
+    height: 2.3437vw; //45px
+    line-height: 2.3437vw;
+    @include borderSize(0.26vw);
+    border-width: 0;
+    border-radius: $b10;
+    margin: auto;
+    text-align: center;
+    font-size: 1.04vw;
+    color: $okTextColor;
+    background-color: $okColor;
+    @include transitionHoverActive();
+    &:hover {
+      @include transitionHoverActive();
+      color: $hoverColor;
+      cursor: pointer;
+    }
+    &:active {
+      @include transitionHoverActive();
+      color: $activeColor;
+    }
+  }
+}
+.toolBox {
+  height: 10.41vw;
+  margin-top: 1.04vw;
+}
+.arrayBox {
+  height: 31.25vw;
+}
+input::placeholder {
+  color: lighten($color: #707070, $amount: 30%);
+}

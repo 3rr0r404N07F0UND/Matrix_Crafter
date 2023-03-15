@@ -1,0 +1,25 @@
+@mixin box() {
+  width: 31.25vw;
+  height: 31.25vw;
+  float: left;
+  margin-right: 1.56vw;
+  border-radius: $b10;
+}
+@mixin borderSize($borderSize: 0) {
+  border: $borderSize solid #8e63bd;
+  box-sizing: border-box;
+}
+@mixin transitionHoverActive() {
+  transition: all 0.3s;
+}
+$b10: 0.52vw; // 10px
+$f36: 1.87vw; // 36px
+$hoverColor: rgb(218, 160, 0);
+$activeColor: #58807b;
+$ruleBackgroundColor: #fad77b;
+$warningText: 0.8333vw; // 16px
+$warningTextLineHeight: 1.302vw;
+$okColor: #fff;
+$okTextColor: #0b0601;
+$warningTextColor: #010101;
+$buttonColor: #5f2e95;
