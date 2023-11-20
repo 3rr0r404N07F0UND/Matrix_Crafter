@@ -200,7 +200,7 @@ let resetAll = () => {
 };
 const plusComma3Number = () => {
   outOfValue = document.querySelectorAll(".outOfValue");
-  outOfValue.forEach((NopValue, index, arrow) => {
+  outOfValue.forEach((nopValue, index, arrow) => {
     outOfValueNumber = outOfValue[index].value;
     outOfValueNumberChangeValue = outOfValueNumber
       .toString()

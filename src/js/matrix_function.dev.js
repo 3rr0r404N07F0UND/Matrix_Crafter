@@ -244,7 +244,7 @@ var resetAll = function resetAll() {
 
 var plusComma3Number = function plusComma3Number() {
   outOfValue = document.querySelectorAll(".outOfValue");
-  outOfValue.forEach(function (NopValue, index, arrow) {
+  outOfValue.forEach(function (nopValue, index, arrow) {
     outOfValueNumber = outOfValue[index].value;
     outOfValueNumberChangeValue = outOfValueNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     outOfValue[index].value = outOfValueNumberChangeValue;
